@@ -39,3 +39,6 @@ npm-debug.log*
 
 # Rohmaterial (Videos, Einzelframes in voller Größe) nicht ins Repo
 /rohmaterial/
+
+# TypeScript
+*.tsbuildinfo
