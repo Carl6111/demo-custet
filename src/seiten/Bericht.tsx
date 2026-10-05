@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MONAT, OFFEN, VORGAENGE, ZAHLEN, ersparnisMinuten } from "../daten/bericht";
+import { MONAT, NACH_NACHFASSEN_BEAUFTRAGT, OFFEN, VORGAENGE, ZAHLEN, auftragsSumme, ersparnisMinuten } from "../daten/bericht";
 import { arbeitstage, euro, stunden } from "../daten/rechnen";
 import type { Betrieb, Modul } from "../daten/typen";
 
@@ -65,7 +65,13 @@ export function Bericht({ betrieb, module, onWeiter }: { betrieb: Betrieb; modul
             </details>
 
             <div className="ersparnis">
-              <p className="ersparnis-zahl">{stunden(minuten)} Büroarbeit gespart</p>
+              <p className="ersparnis-zahl">{euro(auftragsSumme())} netto aus nachgefassten Angeboten</p>
+              <ul className="auftraege">
+                {NACH_NACHFASSEN_BEAUFTRAGT.map((a) => (
+                  <li key={a.wer}><span>{a.wer}: {a.was}</span><span>{euro(a.netto)}</span></li>
+                ))}
+              </ul>
+              <p className="ersparnis-zahl ersparnis-zweit">{stunden(minuten)} Büroarbeit gespart</p>
               <p className="leise">Das sind gut {arbeitstage(minuten).toLocaleString("de-DE")} Arbeitstage in diesem Monat.</p>
               <label htmlFor="satz">Was kostet Sie eine Bürostunde? (in €)</label>
               <input
@@ -77,12 +83,12 @@ export function Bericht({ betrieb, module, onWeiter }: { betrieb: Betrieb; modul
                 onChange={(e) => setSatz(e.target.value.replace(/[^\d,.]/g, "").slice(0, 6))}
               />
               <p className="ersparnis-euro" aria-live="polite">
-                {satzOk ? `Das entspricht ${euro((minuten / 60) * satzZahl)} in diesem Monat.` : " "}
+                {satzOk ? `Das entspricht ${euro((minuten / 60) * satzZahl)} Bürokosten in diesem Monat.` : " "}
               </p>
             </div>
           </article>
           <p className="annahme">
-            Beispielrechnung: {ZAHLEN.vorgaenge} Vorgänge und {ZAHLEN.angebote} Angebote mit den Zeiten aus den beiden Abläufen. Alle Zahlen sind erfunden.
+            Beispielrechnung: {ZAHLEN.vorgaenge} Vorgänge und {ZAHLEN.angebote} Angebote mit den Zeiten aus den beiden Abläufen. Aufträge, Beträge und Namen sind erfunden.
           </p>
           <button type="button" className="knopf" onClick={onWeiter}>So geht es weiter</button>
         </section>

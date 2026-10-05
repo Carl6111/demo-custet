@@ -89,6 +89,9 @@ h2 { font: 400 22px/1.3 var(--serif); }
 .vorgaenge .nr { font-family: var(--mono); white-space: nowrap; color: var(--tinte-2); }
 .ersparnis { margin-top: 22px; padding-top: 20px; border-top: 2px solid var(--tinte); }
 .ersparnis-zahl { font: 400 clamp(26px, 4vw, 34px)/1.15 var(--serif); margin-bottom: 4px !important; }
+.ersparnis-zweit { margin-top: 26px !important; }
+.auftraege { margin: 8px 0 0; padding: 0; list-style: none; font-variant-numeric: tabular-nums; }
+.auftraege li { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid rgba(20, 23, 31, .1); font-size: 15px; }
 .ersparnis label { display: block; margin: 18px 0 6px; font-weight: 600; font-size: 15px; }
 .ersparnis input { width: 9em; min-height: 48px; padding: 0 14px; font-size: 18px; color: var(--tinte); background: #fff; border: 1px solid rgba(20, 23, 31, .3); border-radius: 6px; }
 .ersparnis input:focus-visible { outline: 2px solid var(--akzent-tief); }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { alleModule } from "./index";
-import { ersparnisMinuten } from "./bericht";
+import { auftragsSumme, ersparnisMinuten } from "./bericht";
 import { STANDARD_BETRIEB, arbeitstage, betriebAus, dauer, markiere, stunden, summe, uhrzeit } from "./rechnen";
 import { POSITIONEN } from "./angebot";
 import type { Modul } from "./typen";
@@ -112,5 +112,9 @@ describe("Personalisierung", () => {
 describe("Bericht", () => {
   it("leitet die Ersparnis aus den Abläufen ab", () => {
     expect(ersparnisMinuten(MODULE)).toBe(23 * 23 + 14 * 37);
+  });
+  it("Auftrag Schubert passt zum Angebot aus Ablauf 2 mit 240 € Armatur", () => {
+    expect(auftragsSumme()).toBe(12500);
+    expect(summe(POSITIONEN, 240).betrag).toBe(3430);
   });
 });

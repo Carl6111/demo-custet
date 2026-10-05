@@ -24,8 +24,17 @@ export const VORGAENGE = [
   { nr: "W-0390", wer: "Lehmann", was: "Wartung Gastherme", stand: "Termin am 06.11." },
 ] as const;
 
+/** Angebote, die erst nach dem Nachfassen beauftragt wurden. Schubert ist das Angebot aus Ablauf 2 (mit 240 € für die Armatur). */
+export const NACH_NACHFASSEN_BEAUFTRAGT = [
+  { wer: "Schubert", was: "Badumbau", netto: 3430 },
+  { wer: "Neumann", was: "Heizkörpertausch, vier Räume", netto: 2140 },
+  { wer: "Wagner", was: "Gas-Brennwerttherme getauscht", netto: 6930 },
+] as const;
+
+export const auftragsSumme = (): number => NACH_NACHFASSEN_BEAUFTRAGT.reduce((s, a) => s + a.netto, 0);
+
 export const SPRECHER_BERICHT =
-  "Sagen: Den bekommen Sie jeden Monatsersten. Dann fragen: Was kostet Sie eine Bürostunde? Den Betrag eintippen, nicht selbst schätzen.";
+  "Sagen: Den bekommen Sie jeden Monatsersten. Auf die Aufträge zeigen: Bei diesen drei hat erst die Nachfrage den Auftrag gebracht. Dann fragen: Was kostet Sie eine Bürostunde? Den Betrag eintippen, nicht selbst schätzen.";
 
 /** Gesparte Büroarbeit im Monat: Vorgänge × Ersparnis je Anruf + Angebote × Ersparnis je Angebot. */
 export function ersparnisMinuten(module: Modul[]): number {
