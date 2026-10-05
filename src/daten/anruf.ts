@@ -111,7 +111,7 @@ export function anrufModul(b: Betrieb): Modul {
       { art: "buero", label: "Arbeit im Büro für diesen Anruf", heute: 25, mit: 2 },
     ],
     annahme: "Beispielrechnung mit angenommenen Zeiten, kein Messwert aus einem echten Betrieb.",
-    sprecherEinstieg: "Erst die linke Seite vorlesen lassen oder kurz selbst erzählen: Kennen Sie das? Dann rechts den Anruf starten.",
+    sprecherEinstieg: "Auf die Uhr zeigen: 07:42, beide Seiten starten gleich. Links ist hell, was zu dieser Uhrzeit schon passiert ist. Fragen: Wer geht bei Ihnen ran, wenn alle draußen sind? Dann rechts den Anruf starten.",
     sprecherVergleich: "Auf 'Und wie läuft es heute weiter?' klicken und die Uhr laufen lassen. Nicht reden, bis sie steht. Dann: 25 Stunden gegen 7 Minuten.",
   };
 }
