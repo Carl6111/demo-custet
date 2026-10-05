@@ -34,6 +34,7 @@ export function angebotModul(b: Betrieb): Modul {
     mit: [
       {
         id: "diktat",
+        kurz: "Notiz",
         t: DI + 14 * 60 + 35,
         status: "Sprachnotiz vom Monteur ist da",
         titel: "Der Monteur spricht seine Notiz ein",
@@ -43,6 +44,7 @@ export function angebotModul(b: Betrieb): Modul {
       },
       {
         id: "positionen",
+        kurz: "Angebot",
         t: DI + 14 * 60 + 36,
         status: "Angebotsentwurf aus Ihrer Preisliste",
         titel: "Aus der Notiz werden Positionen",
@@ -58,6 +60,7 @@ export function angebotModul(b: Betrieb): Modul {
       },
       {
         id: "freigabe-angebot",
+        kurz: "Freigabe",
         t: DI + 14 * 60 + 37,
         tErledigt: DI + 15 * 60 + 20,
         status: "Wartet auf Sie: ein Preis fehlt",
@@ -79,6 +82,7 @@ export function angebotModul(b: Betrieb): Modul {
       },
       {
         id: "nachfassen",
+        kurz: "Erinnerung",
         t: MO_DANACH + 9 * 60,
         tErledigt: MO_DANACH + 9 * 60 + 1,
         status: "Vier Werktage ohne Antwort: Nachfassen fällig",

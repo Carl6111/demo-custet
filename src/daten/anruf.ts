@@ -39,6 +39,7 @@ export function anrufModul(b: Betrieb): Modul {
     mit: [
       {
         id: "anruf",
+        kurz: "Anruf",
         t: START,
         status: "Der Assistent nimmt ab und fragt nach",
         titel: "Der Assistent nimmt ab",
@@ -48,6 +49,7 @@ export function anrufModul(b: Betrieb): Modul {
       },
       {
         id: "auslesen",
+        kurz: "Verstanden",
         t: START + 3,
         status: "Anliegen, Adresse und Dringlichkeit erfasst",
         titel: "Das System liest heraus, worum es geht",
@@ -69,6 +71,7 @@ export function anrufModul(b: Betrieb): Modul {
       },
       {
         id: "vorgang",
+        kurz: "Vorgang",
         t: START + 3,
         status: "Vorgang angelegt, Termin vorgeschlagen",
         titel: "Der Vorgang ist angelegt",
@@ -88,6 +91,7 @@ export function anrufModul(b: Betrieb): Modul {
       },
       {
         id: "freigabe",
+        kurz: "Freigabe",
         t: START + 4,
         tErledigt: START + 7,
         status: "Wartet auf Ihre Freigabe",

@@ -69,8 +69,7 @@ function Demo() {
           ))}
         </nav>
         <p className="beispiel">
-          {betrieb.persoenlich ? `Beispiel für ${betrieb.name}. ` : `Beispielbetrieb ${betrieb.name}. `}
-          Alle Vorgänge und Zahlen sind erfunden.
+          {betrieb.persoenlich ? `Beispiel für ${betrieb.name}` : "Beispielbetrieb"} · alle Daten erfunden
         </p>
       </header>
 

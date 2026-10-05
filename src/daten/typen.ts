@@ -32,6 +32,8 @@ export type Schritt = {
   t: Minute;
   /** Nur bei Freigaben: wann es nach dem Tippen auf Freigeben draußen ist. */
   tErledigt?: Minute;
+  /** Ein Wort für die Bildfolge oben. */
+  kurz: string;
   status: string;
   statusErledigt?: string;
   titel: string;

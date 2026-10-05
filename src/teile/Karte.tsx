@@ -10,13 +10,12 @@ type Props = {
   zeit: string;
   freigegeben: boolean;
   onFreigabe: () => void;
-  onGespraechFertig: () => void;
 };
 
-export function Karte({ karte, zeit, freigegeben, onFreigabe, onGespraechFertig }: Props) {
+export function Karte({ karte, zeit, freigegeben, onFreigabe }: Props) {
   switch (karte.art) {
     case "anruf":
-      return <Gespraech anrufer={karte.anrufer} zeilen={karte.zeilen} onFertig={onGespraechFertig} />;
+      return <Gespraech anrufer={karte.anrufer} zeilen={karte.zeilen} />;
     case "nachricht":
       return (
         <article className="karte">
@@ -76,7 +75,7 @@ export function Karte({ karte, zeit, freigegeben, onFreigabe, onGespraechFertig 
 
 function Felder({ zeilen, gestaffelt = false }: { zeilen: Zeile[]; gestaffelt?: boolean }) {
   return (
-    <dl className="felder">
+    <dl className={gestaffelt ? "felder kacheln" : "felder"}>
       {zeilen.map((z, i) => (
         <div key={z.label} className={`feld${z.markiert ? " markiert" : ""}${gestaffelt ? " erscheint" : ""}`} style={gestaffelt ? verzoegert(i) : undefined}>
           <dt>{z.label}</dt>
